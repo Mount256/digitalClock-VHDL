@@ -1,0 +1,93 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'diver:U1|m_clk1'
+Slack : -1.398
+TNS   : -28.479
+
+Type  : Slow Model Setup 'diver:U1|m_clk0'
+Slack : -1.197
+TNS   : -5.094
+
+Type  : Slow Model Setup 'clk'
+Slack : -0.035
+TNS   : -0.035
+
+Type  : Slow Model Hold 'clk'
+Slack : -2.213
+TNS   : -4.411
+
+Type  : Slow Model Hold 'diver:U1|m_clk1'
+Slack : -0.711
+TNS   : -5.145
+
+Type  : Slow Model Hold 'diver:U1|m_clk0'
+Slack : 0.391
+TNS   : 0.000
+
+Type  : Slow Model Recovery 'diver:U1|m_clk0'
+Slack : -3.012
+TNS   : -22.736
+
+Type  : Slow Model Removal 'diver:U1|m_clk0'
+Slack : 3.510
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'clk'
+Slack : -1.380
+TNS   : -6.380
+
+Type  : Slow Model Minimum Pulse Width 'diver:U1|m_clk1'
+Slack : -0.500
+TNS   : -40.000
+
+Type  : Slow Model Minimum Pulse Width 'diver:U1|m_clk0'
+Slack : -0.500
+TNS   : -8.000
+
+Type  : Fast Model Setup 'diver:U1|m_clk1'
+Slack : -0.181
+TNS   : -1.720
+
+Type  : Fast Model Setup 'diver:U1|m_clk0'
+Slack : -0.077
+TNS   : -0.231
+
+Type  : Fast Model Setup 'clk'
+Slack : 0.516
+TNS   : 0.000
+
+Type  : Fast Model Hold 'clk'
+Slack : -1.351
+TNS   : -2.687
+
+Type  : Fast Model Hold 'diver:U1|m_clk1'
+Slack : -0.230
+TNS   : -0.411
+
+Type  : Fast Model Hold 'diver:U1|m_clk0'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Recovery 'diver:U1|m_clk0'
+Slack : -1.348
+TNS   : -10.219
+
+Type  : Fast Model Removal 'diver:U1|m_clk0'
+Slack : 2.115
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'clk'
+Slack : -1.380
+TNS   : -6.380
+
+Type  : Fast Model Minimum Pulse Width 'diver:U1|m_clk1'
+Slack : -0.500
+TNS   : -40.000
+
+Type  : Fast Model Minimum Pulse Width 'diver:U1|m_clk0'
+Slack : -0.500
+TNS   : -8.000
+
+------------------------------------------------------------

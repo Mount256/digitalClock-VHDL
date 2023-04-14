@@ -1,0 +1,495 @@
+|clock_top_1
+clk => diver:U1.clk
+clk => trigger:U21.clk
+key_sec => switch:U8.key
+key_min => switch:U9.key
+key_hour => switch:U10.key
+sec0[0] << mmux21a:U11.y[0]
+sec0[1] << mmux21a:U11.y[1]
+sec0[2] << mmux21a:U11.y[2]
+sec0[3] << mmux21a:U11.y[3]
+sec1[0] << mmux21a:U12.y[0]
+sec1[1] << mmux21a:U12.y[1]
+sec1[2] << mmux21a:U12.y[2]
+sec1[3] << mmux21a:U12.y[3]
+min0[0] << mmux21a:U13.y[0]
+min0[1] << mmux21a:U13.y[1]
+min0[2] << mmux21a:U13.y[2]
+min0[3] << mmux21a:U13.y[3]
+min1[0] << mmux21a:U14.y[0]
+min1[1] << mmux21a:U14.y[1]
+min1[2] << mmux21a:U14.y[2]
+min1[3] << mmux21a:U14.y[3]
+hour0[0] << mmux21a:U15.y[0]
+hour0[1] << mmux21a:U15.y[1]
+hour0[2] << mmux21a:U15.y[2]
+hour0[3] << mmux21a:U15.y[3]
+hour1[0] << mmux21a:U16.y[0]
+hour1[1] << mmux21a:U16.y[1]
+hour1[2] << mmux21a:U16.y[2]
+hour1[3] << mmux21a:U16.y[3]
+key_shift => trigger:U21.t
+speak <= speak~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock_top_1|diver:U1
+clk => m_clk1.CLK
+clk => m_clk0.CLK
+clk => cnt_1.CLK
+clk => cnt_0[0].CLK
+clk => cnt_0[1].CLK
+clk0 <= m_clk0.DB_MAX_OUTPUT_PORT_TYPE
+clk1 <= m_clk1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock_top_1|count_sec:U2
+clk => num1[0].CLK
+clk => num1[1].CLK
+clk => num1[2].CLK
+clk => num1[3].CLK
+clk => num0[0].CLK
+clk => num0[1].CLK
+clk => num0[2].CLK
+clk => num0[3].CLK
+rst => num1[0].ACLR
+rst => num1[1].ACLR
+rst => num1[2].ACLR
+rst => num1[3].ACLR
+rst => num0[0].ACLR
+rst => num0[1].ACLR
+rst => num0[2].ACLR
+rst => num0[3].ACLR
+en => cout~1.IN1
+en => num1[0].ENA
+en => num0[3].ENA
+en => num0[2].ENA
+en => num0[1].ENA
+en => num0[0].ENA
+en => num1[3].ENA
+en => num1[2].ENA
+en => num1[1].ENA
+q0[0] <= num0[0].DB_MAX_OUTPUT_PORT_TYPE
+q0[1] <= num0[1].DB_MAX_OUTPUT_PORT_TYPE
+q0[2] <= num0[2].DB_MAX_OUTPUT_PORT_TYPE
+q0[3] <= num0[3].DB_MAX_OUTPUT_PORT_TYPE
+q1[0] <= num1[0].DB_MAX_OUTPUT_PORT_TYPE
+q1[1] <= num1[1].DB_MAX_OUTPUT_PORT_TYPE
+q1[2] <= num1[2].DB_MAX_OUTPUT_PORT_TYPE
+q1[3] <= num1[3].DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout~1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock_top_1|count_min:U3
+clk => num1[0].CLK
+clk => num1[1].CLK
+clk => num1[2].CLK
+clk => num1[3].CLK
+clk => num0[0].CLK
+clk => num0[1].CLK
+clk => num0[2].CLK
+clk => num0[3].CLK
+rst => num1[0].ACLR
+rst => num1[1].ACLR
+rst => num1[2].ACLR
+rst => num1[3].ACLR
+rst => num0[0].ACLR
+rst => num0[1].ACLR
+rst => num0[2].ACLR
+rst => num0[3].ACLR
+en => cout~1.IN1
+en => num1[0].ENA
+en => num0[3].ENA
+en => num0[2].ENA
+en => num0[1].ENA
+en => num0[0].ENA
+en => num1[3].ENA
+en => num1[2].ENA
+en => num1[1].ENA
+q0[0] <= num0[0].DB_MAX_OUTPUT_PORT_TYPE
+q0[1] <= num0[1].DB_MAX_OUTPUT_PORT_TYPE
+q0[2] <= num0[2].DB_MAX_OUTPUT_PORT_TYPE
+q0[3] <= num0[3].DB_MAX_OUTPUT_PORT_TYPE
+q1[0] <= num1[0].DB_MAX_OUTPUT_PORT_TYPE
+q1[1] <= num1[1].DB_MAX_OUTPUT_PORT_TYPE
+q1[2] <= num1[2].DB_MAX_OUTPUT_PORT_TYPE
+q1[3] <= num1[3].DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout~1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock_top_1|count_hour:U4
+clk => num1[0].CLK
+clk => num1[1].CLK
+clk => num1[2].CLK
+clk => num1[3].CLK
+clk => num0[0].CLK
+clk => num0[1].CLK
+clk => num0[2].CLK
+clk => num0[3].CLK
+rst => num1[0].ACLR
+rst => num1[1].ACLR
+rst => num1[2].ACLR
+rst => num1[3].ACLR
+rst => num0[0].ACLR
+rst => num0[1].ACLR
+rst => num0[2].ACLR
+rst => num0[3].ACLR
+en => cout~1.IN1
+en => num1[0].ENA
+en => num0[3].ENA
+en => num0[2].ENA
+en => num0[1].ENA
+en => num0[0].ENA
+en => num1[3].ENA
+en => num1[2].ENA
+en => num1[1].ENA
+q0[0] <= num0[0].DB_MAX_OUTPUT_PORT_TYPE
+q0[1] <= num0[1].DB_MAX_OUTPUT_PORT_TYPE
+q0[2] <= num0[2].DB_MAX_OUTPUT_PORT_TYPE
+q0[3] <= num0[3].DB_MAX_OUTPUT_PORT_TYPE
+q1[0] <= num1[0].DB_MAX_OUTPUT_PORT_TYPE
+q1[1] <= num1[1].DB_MAX_OUTPUT_PORT_TYPE
+q1[2] <= num1[2].DB_MAX_OUTPUT_PORT_TYPE
+q1[3] <= num1[3].DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout~1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock_top_1|mux21a:U5
+a => y~0.DATAB
+b => y~0.DATAA
+s => y~0.OUTPUTSELECT
+y <= y~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock_top_1|mux21a:U6
+a => y~0.DATAB
+b => y~0.DATAA
+s => y~0.OUTPUTSELECT
+y <= y~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock_top_1|baoshi:U7
+min0[0] => Equal1.IN7
+min0[1] => Equal1.IN6
+min0[2] => Equal1.IN5
+min0[3] => Equal1.IN4
+min1[0] => Equal0.IN7
+min1[1] => Equal0.IN6
+min1[2] => Equal0.IN5
+min1[3] => Equal0.IN4
+sec0[0] => Equal3.IN7
+sec0[0] => Equal4.IN7
+sec0[0] => Equal5.IN7
+sec0[0] => Equal6.IN7
+sec0[1] => Equal3.IN6
+sec0[1] => Equal4.IN6
+sec0[1] => Equal5.IN6
+sec0[1] => Equal6.IN6
+sec0[2] => Equal3.IN5
+sec0[2] => Equal4.IN5
+sec0[2] => Equal5.IN5
+sec0[2] => Equal6.IN5
+sec0[3] => Equal3.IN4
+sec0[3] => Equal4.IN4
+sec0[3] => Equal5.IN4
+sec0[3] => Equal6.IN4
+sec1[0] => Equal2.IN7
+sec1[1] => Equal2.IN6
+sec1[2] => Equal2.IN5
+sec1[3] => Equal2.IN4
+speak <= speak~5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock_top_1|switch:U8
+key => s1~0.IN0
+key => s2~0.IN0
+s => s2~0.IN1
+s => s1~0.IN1
+s1 <= s1~0.DB_MAX_OUTPUT_PORT_TYPE
+s2 <= s2~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock_top_1|switch:U9
+key => s1~0.IN0
+key => s2~0.IN0
+s => s2~0.IN1
+s => s1~0.IN1
+s1 <= s1~0.DB_MAX_OUTPUT_PORT_TYPE
+s2 <= s2~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock_top_1|switch:U10
+key => s1~0.IN0
+key => s2~0.IN0
+s => s2~0.IN1
+s => s1~0.IN1
+s1 <= s1~0.DB_MAX_OUTPUT_PORT_TYPE
+s2 <= s2~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock_top_1|mmux21a:U11
+a[0] => y~3.DATAB
+a[1] => y~2.DATAB
+a[2] => y~1.DATAB
+a[3] => y~0.DATAB
+b[0] => y~3.DATAA
+b[1] => y~2.DATAA
+b[2] => y~1.DATAA
+b[3] => y~0.DATAA
+s => y~0.OUTPUTSELECT
+s => y~1.OUTPUTSELECT
+s => y~2.OUTPUTSELECT
+s => y~3.OUTPUTSELECT
+y[0] <= y~3.DB_MAX_OUTPUT_PORT_TYPE
+y[1] <= y~2.DB_MAX_OUTPUT_PORT_TYPE
+y[2] <= y~1.DB_MAX_OUTPUT_PORT_TYPE
+y[3] <= y~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock_top_1|mmux21a:U12
+a[0] => y~3.DATAB
+a[1] => y~2.DATAB
+a[2] => y~1.DATAB
+a[3] => y~0.DATAB
+b[0] => y~3.DATAA
+b[1] => y~2.DATAA
+b[2] => y~1.DATAA
+b[3] => y~0.DATAA
+s => y~0.OUTPUTSELECT
+s => y~1.OUTPUTSELECT
+s => y~2.OUTPUTSELECT
+s => y~3.OUTPUTSELECT
+y[0] <= y~3.DB_MAX_OUTPUT_PORT_TYPE
+y[1] <= y~2.DB_MAX_OUTPUT_PORT_TYPE
+y[2] <= y~1.DB_MAX_OUTPUT_PORT_TYPE
+y[3] <= y~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock_top_1|mmux21a:U13
+a[0] => y~3.DATAB
+a[1] => y~2.DATAB
+a[2] => y~1.DATAB
+a[3] => y~0.DATAB
+b[0] => y~3.DATAA
+b[1] => y~2.DATAA
+b[2] => y~1.DATAA
+b[3] => y~0.DATAA
+s => y~0.OUTPUTSELECT
+s => y~1.OUTPUTSELECT
+s => y~2.OUTPUTSELECT
+s => y~3.OUTPUTSELECT
+y[0] <= y~3.DB_MAX_OUTPUT_PORT_TYPE
+y[1] <= y~2.DB_MAX_OUTPUT_PORT_TYPE
+y[2] <= y~1.DB_MAX_OUTPUT_PORT_TYPE
+y[3] <= y~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock_top_1|mmux21a:U14
+a[0] => y~3.DATAB
+a[1] => y~2.DATAB
+a[2] => y~1.DATAB
+a[3] => y~0.DATAB
+b[0] => y~3.DATAA
+b[1] => y~2.DATAA
+b[2] => y~1.DATAA
+b[3] => y~0.DATAA
+s => y~0.OUTPUTSELECT
+s => y~1.OUTPUTSELECT
+s => y~2.OUTPUTSELECT
+s => y~3.OUTPUTSELECT
+y[0] <= y~3.DB_MAX_OUTPUT_PORT_TYPE
+y[1] <= y~2.DB_MAX_OUTPUT_PORT_TYPE
+y[2] <= y~1.DB_MAX_OUTPUT_PORT_TYPE
+y[3] <= y~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock_top_1|mmux21a:U15
+a[0] => y~3.DATAB
+a[1] => y~2.DATAB
+a[2] => y~1.DATAB
+a[3] => y~0.DATAB
+b[0] => y~3.DATAA
+b[1] => y~2.DATAA
+b[2] => y~1.DATAA
+b[3] => y~0.DATAA
+s => y~0.OUTPUTSELECT
+s => y~1.OUTPUTSELECT
+s => y~2.OUTPUTSELECT
+s => y~3.OUTPUTSELECT
+y[0] <= y~3.DB_MAX_OUTPUT_PORT_TYPE
+y[1] <= y~2.DB_MAX_OUTPUT_PORT_TYPE
+y[2] <= y~1.DB_MAX_OUTPUT_PORT_TYPE
+y[3] <= y~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock_top_1|mmux21a:U16
+a[0] => y~3.DATAB
+a[1] => y~2.DATAB
+a[2] => y~1.DATAB
+a[3] => y~0.DATAB
+b[0] => y~3.DATAA
+b[1] => y~2.DATAA
+b[2] => y~1.DATAA
+b[3] => y~0.DATAA
+s => y~0.OUTPUTSELECT
+s => y~1.OUTPUTSELECT
+s => y~2.OUTPUTSELECT
+s => y~3.OUTPUTSELECT
+y[0] <= y~3.DB_MAX_OUTPUT_PORT_TYPE
+y[1] <= y~2.DB_MAX_OUTPUT_PORT_TYPE
+y[2] <= y~1.DB_MAX_OUTPUT_PORT_TYPE
+y[3] <= y~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock_top_1|count_sec:U17
+clk => num1[0].CLK
+clk => num1[1].CLK
+clk => num1[2].CLK
+clk => num1[3].CLK
+clk => num0[0].CLK
+clk => num0[1].CLK
+clk => num0[2].CLK
+clk => num0[3].CLK
+rst => num1[0].ACLR
+rst => num1[1].ACLR
+rst => num1[2].ACLR
+rst => num1[3].ACLR
+rst => num0[0].ACLR
+rst => num0[1].ACLR
+rst => num0[2].ACLR
+rst => num0[3].ACLR
+en => cout~1.IN1
+en => num1[0].ENA
+en => num0[3].ENA
+en => num0[2].ENA
+en => num0[1].ENA
+en => num0[0].ENA
+en => num1[3].ENA
+en => num1[2].ENA
+en => num1[1].ENA
+q0[0] <= num0[0].DB_MAX_OUTPUT_PORT_TYPE
+q0[1] <= num0[1].DB_MAX_OUTPUT_PORT_TYPE
+q0[2] <= num0[2].DB_MAX_OUTPUT_PORT_TYPE
+q0[3] <= num0[3].DB_MAX_OUTPUT_PORT_TYPE
+q1[0] <= num1[0].DB_MAX_OUTPUT_PORT_TYPE
+q1[1] <= num1[1].DB_MAX_OUTPUT_PORT_TYPE
+q1[2] <= num1[2].DB_MAX_OUTPUT_PORT_TYPE
+q1[3] <= num1[3].DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout~1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock_top_1|count_min:U18
+clk => num1[0].CLK
+clk => num1[1].CLK
+clk => num1[2].CLK
+clk => num1[3].CLK
+clk => num0[0].CLK
+clk => num0[1].CLK
+clk => num0[2].CLK
+clk => num0[3].CLK
+rst => num1[0].ACLR
+rst => num1[1].ACLR
+rst => num1[2].ACLR
+rst => num1[3].ACLR
+rst => num0[0].ACLR
+rst => num0[1].ACLR
+rst => num0[2].ACLR
+rst => num0[3].ACLR
+en => cout~1.IN1
+en => num1[0].ENA
+en => num0[3].ENA
+en => num0[2].ENA
+en => num0[1].ENA
+en => num0[0].ENA
+en => num1[3].ENA
+en => num1[2].ENA
+en => num1[1].ENA
+q0[0] <= num0[0].DB_MAX_OUTPUT_PORT_TYPE
+q0[1] <= num0[1].DB_MAX_OUTPUT_PORT_TYPE
+q0[2] <= num0[2].DB_MAX_OUTPUT_PORT_TYPE
+q0[3] <= num0[3].DB_MAX_OUTPUT_PORT_TYPE
+q1[0] <= num1[0].DB_MAX_OUTPUT_PORT_TYPE
+q1[1] <= num1[1].DB_MAX_OUTPUT_PORT_TYPE
+q1[2] <= num1[2].DB_MAX_OUTPUT_PORT_TYPE
+q1[3] <= num1[3].DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout~1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock_top_1|count_hour:U19
+clk => num1[0].CLK
+clk => num1[1].CLK
+clk => num1[2].CLK
+clk => num1[3].CLK
+clk => num0[0].CLK
+clk => num0[1].CLK
+clk => num0[2].CLK
+clk => num0[3].CLK
+rst => num1[0].ACLR
+rst => num1[1].ACLR
+rst => num1[2].ACLR
+rst => num1[3].ACLR
+rst => num0[0].ACLR
+rst => num0[1].ACLR
+rst => num0[2].ACLR
+rst => num0[3].ACLR
+en => cout~1.IN1
+en => num1[0].ENA
+en => num0[3].ENA
+en => num0[2].ENA
+en => num0[1].ENA
+en => num0[0].ENA
+en => num1[3].ENA
+en => num1[2].ENA
+en => num1[1].ENA
+q0[0] <= num0[0].DB_MAX_OUTPUT_PORT_TYPE
+q0[1] <= num0[1].DB_MAX_OUTPUT_PORT_TYPE
+q0[2] <= num0[2].DB_MAX_OUTPUT_PORT_TYPE
+q0[3] <= num0[3].DB_MAX_OUTPUT_PORT_TYPE
+q1[0] <= num1[0].DB_MAX_OUTPUT_PORT_TYPE
+q1[1] <= num1[1].DB_MAX_OUTPUT_PORT_TYPE
+q1[2] <= num1[2].DB_MAX_OUTPUT_PORT_TYPE
+q1[3] <= num1[3].DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout~1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock_top_1|alarm:U20
+min0[0] => Equal0.IN3
+min0[1] => Equal0.IN2
+min0[2] => Equal0.IN1
+min0[3] => Equal0.IN0
+min1[0] => Equal1.IN3
+min1[1] => Equal1.IN2
+min1[2] => Equal1.IN1
+min1[3] => Equal1.IN0
+hour0[0] => Equal2.IN3
+hour0[1] => Equal2.IN2
+hour0[2] => Equal2.IN1
+hour0[3] => Equal2.IN0
+hour1[0] => Equal3.IN3
+hour1[1] => Equal3.IN2
+hour1[2] => Equal3.IN1
+hour1[3] => Equal3.IN0
+amin0[0] => Equal0.IN7
+amin0[1] => Equal0.IN6
+amin0[2] => Equal0.IN5
+amin0[3] => Equal0.IN4
+amin1[0] => Equal1.IN7
+amin1[1] => Equal1.IN6
+amin1[2] => Equal1.IN5
+amin1[3] => Equal1.IN4
+ahour0[0] => Equal2.IN7
+ahour0[1] => Equal2.IN6
+ahour0[2] => Equal2.IN5
+ahour0[3] => Equal2.IN4
+ahour1[0] => Equal3.IN7
+ahour1[1] => Equal3.IN6
+ahour1[2] => Equal3.IN5
+ahour1[3] => Equal3.IN4
+speak <= speak~2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock_top_1|trigger:U21
+t => temp.ENA
+clk => temp.CLK
+q <= temp.DB_MAX_OUTPUT_PORT_TYPE
+
+
